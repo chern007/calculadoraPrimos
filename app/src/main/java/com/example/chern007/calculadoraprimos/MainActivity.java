@@ -1,12 +1,13 @@
 package com.example.chern007.calculadoraprimos;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
-import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
 
 
     @Override
@@ -16,13 +17,34 @@ public class MainActivity extends AppCompatActivity {
 
         EditText mtxtResultado = (EditText) findViewById(R.id.mtxtResultado);
 
-mtxtResultado.setText("mjbdfhjgdfkjbkjdvfakljbcdvf\njbvgfkjbh");
+        mtxtResultado.setText("mjbdfhjgdfkjbkjdvfakljbcdvf\njbvgfkjbh");
     }
 
 
     public static int calculaNsimoPrimo(int nsimo) {
-        int resultado = nsimo;
+        int resultado;
 
+
+        List<Integer> primos = new ArrayList<Integer>();
+
+        int numerito = 1;
+
+        while (primos.size() < nsimo + 1) {
+
+
+            for (int i = 2; i < numerito; i++) {
+
+                if ((numerito % i) == 0) {
+
+
+                    break;
+                }
+
+
+            }
+
+            numerito++;
+        }
 
 
         return resultado;
