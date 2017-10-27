@@ -24,6 +24,7 @@ mtxtResultado.setText("mjbdfhjgdfkjbkjdvfakljbcdvf\njbvgfkjbh");
         int resultado = nsimo;
 
 
+
         return resultado;
     }
 
