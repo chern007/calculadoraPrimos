@@ -20,12 +20,12 @@ mtxtResultado.setText("mjbdfhjgdfkjbkjdvfakljbcdvf\njbvgfkjbh");
     }
 
 
-//    public static int calculaNsimoPrimo(int nsimo) {
-//        int resultado;
-//
-//
-//        return resultado;
-//    }
+    public static int calculaNsimoPrimo(int nsimo) {
+        int resultado = nsimo;
+
+
+        return resultado;
+    }
 
 
 }
