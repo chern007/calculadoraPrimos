@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         boolean resto0 = false;
 
-        while (primos.size() < nsimo + 1) {
+        while (primos.size() < nsimo) {
 
             for (int i = 1; i < numerito; i++) {
 

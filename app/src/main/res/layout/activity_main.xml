@@ -18,7 +18,9 @@
         android:background="@null"
         android:contextClickable="false"
         android:drawableBottom="@android:color/transparent"
+        android:editable="false"
         android:ems="10"
+        android:enabled="true"
         android:inputType="none"
         android:text="Calculadora de números primos:"
         android:textSize="24sp"
@@ -36,6 +38,7 @@
         android:layout_width="324dp"
         android:layout_height="130dp"
         android:background="@null"
+        android:editable="false"
         android:ems="10"
         android:gravity="top"
         android:inputType="none"
@@ -67,7 +70,10 @@
         app:layout_constraintLeft_toRightOf="@+id/lblPosicion"
         android:imeOptions="actionDone"
         android:maxLines="1"
+        android:hint="Ordinal del nº primo."
+        android:cursorVisible="false"
         android:layout_marginLeft="23dp" />
+
 
     <Button
         android:id="@+id/btCalcular"
@@ -85,10 +91,11 @@
         android:layout_height="84dp"
         android:layout_marginLeft="97dp"
         android:layout_marginTop="24dp"
-        android:textSize="40dp"
+        android:editable="false"
         android:ems="10"
         android:gravity="center_horizontal"
         android:inputType="none"
+        android:textSize="40dp"
         app:layout_constraintLeft_toLeftOf="@+id/btCalcular"
         app:layout_constraintTop_toBottomOf="@+id/btCalcular" />
 
