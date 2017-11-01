@@ -7,11 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static List<Integer> primos = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,71 +39,27 @@ public class MainActivity extends AppCompatActivity {
 
         final Button button = (Button) findViewById(R.id.btCalcular);
 
+        final calculaPrimo calculo1 = new calculaPrimo();
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String entrada = mtxtNsimo.getText().toString();
-                //if ((entrada = mtxtNsimo.getText().toString()) == "") {
-                if (entrada.equals("")) {
+                String entrada;
+                if ((entrada = mtxtNsimo.getText().toString()).equals("")) {
 
                     alertDialog.show();
                     return;
                 }
 
-                int primoBuscado = calculaNsimoPrimo(Integer.parseInt(entrada));
+                //int primoBuscado = calculaNsimoPrimo(Integer.parseInt(entrada));
+                int primoBuscado = calculo1.calculaNsimoPrimo(Integer.parseInt(entrada));
 
-                mtxtResultado.setText(String.valueOf(primoBuscado));
+                mtxtResultado.setText("El primo número " + entrada + " es el " + String.valueOf(primoBuscado) + ".");
 
             }
         });
 
-
-    }
-
-
-    public static int calculaNsimoPrimo(int nsimo) {
-
-
-        List<Integer> primos = new ArrayList<>();
-
-        int numerito = 1;
-
-        boolean resto0 = false;
-
-        while (primos.size() < nsimo) {
-
-            for (int i = 1; i < numerito; i++) {
-
-                if ((numerito % i) == 0 && i != 1) {
-
-                    resto0 = true;
-
-                    break;
-                }
-            }
-
-
-            if (resto0 == false) {
-
-                primos.add(numerito);
-
-            } else {
-
-                resto0 = false;
-            }
-
-            numerito++;
-        }
-
-        if (nsimo == 1) {
-
-            return 1;
-
-        } else {
-
-            return primos.get(nsimo - 1);
-        }
 
     }
 

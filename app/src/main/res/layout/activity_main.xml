@@ -7,6 +7,10 @@
     android:layout_height="match_parent"
     tools:context="com.example.chern007.calculadoraprimos.MainActivity">
 
+
+
+
+
     <EditText
         android:id="@+id/txtTitulo"
         android:layout_width="328dp"
@@ -57,6 +61,7 @@
         android:text="@string/txtLabel"
         app:layout_constraintLeft_toLeftOf="@+id/mtxtInstru"
         android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
         app:layout_constraintTop_toBottomOf="@+id/mtxtInstru" />
 
     <EditText
@@ -72,6 +77,7 @@
         android:maxLines="1"
         android:hint="Ordinal del nº primo."
         android:cursorVisible="false"
+        android:gravity="center_horizontal"
         android:layout_marginLeft="23dp" />
 
 
@@ -87,15 +93,15 @@
 
     <EditText
         android:id="@+id/mtxtResultado"
-        android:layout_width="130dp"
-        android:layout_height="84dp"
-        android:layout_marginLeft="97dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="330dp"
+        android:layout_height="66dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="13dp"
         android:editable="false"
         android:ems="10"
         android:gravity="center_horizontal"
         android:inputType="none"
-        android:textSize="40dp"
+        android:textSize="20dp"
         app:layout_constraintLeft_toLeftOf="@+id/btCalcular"
         app:layout_constraintTop_toBottomOf="@+id/btCalcular" />
 

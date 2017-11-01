@@ -1,9 +1,8 @@
 package com.example.chern007.calculadoraprimos;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
+ * Clase para calcular numeros primos
  * Created by Carlos on 29/10/2017.
  */
 
@@ -14,35 +13,44 @@ public class calculaPrimo {
 
     public int calculaNsimoPrimo(int nsimo) {
 
-        List<Integer> primos = new ArrayList<>();
 
-        int numerito = 1;
+        if (nsimo > MainActivity.primos.size()) {
 
-        boolean resto0 = false;
+            int numerito = 1;
 
-        while (primos.size() < nsimo + 1) {
+            boolean resto0 = false;
 
-            for (int i = 1; i < numerito; i++) {
+            while (MainActivity.primos.size() < nsimo) {
 
-                if ((numerito % i) == 0 && i != 1) {
 
-                    resto0 = true;
+                if (!MainActivity.primos.contains(numerito)) {
 
-                    break;
+                    for (int i = 1; i < numerito; i++) {
+
+                        if ((numerito % i) == 0 && i != 1) {
+
+                            resto0 = true;
+
+                            break;
+                        }
+                    }
+
+                    //si el numero no tiene ningun resto igual a 0 y no está contenido
+                    if (!resto0 ) {
+
+                        MainActivity.primos.add(numerito);
+
+                    } else {
+
+                        resto0 = false;
+                    }
+
+
                 }
+
+                numerito++;
             }
 
-
-            if (!resto0) {
-
-                primos.add(numerito);
-
-            } else {
-
-                resto0 = false;
-            }
-
-            numerito++;
         }
 
         if (nsimo == 1) {
@@ -51,7 +59,7 @@ public class calculaPrimo {
 
         } else {
 
-            return primos.get(nsimo - 1);
+            return MainActivity.primos.get(nsimo - 1);
         }
 
     }
