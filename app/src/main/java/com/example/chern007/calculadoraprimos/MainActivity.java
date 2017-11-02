@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,11 +15,19 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     public static List<Integer> primos = new ArrayList<>();
+    Toolbar miBarra;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        miBarra = (Toolbar) findViewById(R.id.tool_bar);
+        setSupportActionBar(miBarra);
+        getSupportActionBar().setTitle("    Primera Aplicación");
+
+        miBarra.setLogo(R.drawable.abacus_512);
+
 
         //Creo una ventana de alerta para avisar si no se ha introducido algun valor
         final AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
